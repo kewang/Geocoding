@@ -45,19 +45,19 @@ public class Main {
 			columns.add(v1);
 			columns.add(v2);
 
-//			GeoApiContext context = new GeoApiContext().setApiKey(API_KEY);
-//			GeocodingResult[] results;
-//
-//			results = GeocodingApi.geocode(context, address).await();
-//
-//			if (results.length != 0) {
-//				LatLng location = results[0].geometry.location;
-//
-//				columns.add(String.valueOf(location.lat));
-//				columns.add(String.valueOf(location.lng));
-//
-//				printer.printRecord(columns);
-//			}
+			GeoApiContext context = new GeoApiContext().setApiKey(API_KEY);
+			GeocodingResult[] results;
+
+			results = GeocodingApi.geocode(context, address).await();
+
+			if (results.length != 0) {
+				LatLng location = results[0].geometry.location;
+
+				columns.add(String.valueOf(location.lat));
+				columns.add(String.valueOf(location.lng));
+
+				printer.printRecord(columns);
+			}
 
 			System.out.println(address);
 		}
